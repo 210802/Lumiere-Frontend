@@ -1,0 +1,18 @@
+:root {
+  --bg-base:        #0A0908;
+  --bg-surface-1:   #111009;
+  --bg-surface-2:   #1A1712;
+  --bg-surface-3:   #221F1A;
+  --gold:           #C9A84C;
+  --gold-dim:       #8B6B3D;
+  --gold-ghost:     rgba(201, 168, 76, 0.12);
+  --gold-glow:      rgba(201, 168, 76, 0.25);
+  --text-primary:   #F0EBE0;
+  --text-secondary: #8A8070;
+  --text-tertiary:  #4A4540;
+  --danger:         #C44B3A;
+  --success:        #4A8C6A;
+  --border-gold:    rgba(201, 168, 76, 0.15);
+  --border-gold-md: rgba(201, 168, 76, 0.3);
+  --border-gold-hi: rgba(201, 168, 76, 0.6);
+}
