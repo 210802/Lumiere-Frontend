@@ -277,7 +277,7 @@ export default function Edit() {
     es.onerror = () => { setProcessing(false); es.close() }
   }
 
-  const handleExport = () => navigate('https://lumiere-backend-xscg.onrender.com/export', { state: { batchId, sessionId } })
+  const handleExport = () => navigate('/export', { state: { batchId, sessionId } })
 
   const handleDeleteFromFilmstrip = (id) => {
     revokeThumbCache(id)
