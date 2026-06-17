@@ -242,7 +242,7 @@ export default function Edit() {
     if (sessionId)             form.append('session_id',    sessionId)
 
     try {
-      const res = await fetch('/process-batch', { method: 'POST', body: form })
+      const res = await fetch('https://lumiere-backend-xscg.onrender.com/process-batch', { method: 'POST', body: form })
       if (!res.ok) throw new Error('Failed to start batch')
       const data = await res.json()
       setBatchId(data.batch_id)
@@ -277,7 +277,7 @@ export default function Edit() {
     es.onerror = () => { setProcessing(false); es.close() }
   }
 
-  const handleExport = () => navigate('/export', { state: { batchId, sessionId } })
+  const handleExport = () => navigate('https://lumiere-backend-xscg.onrender.com/export', { state: { batchId, sessionId } })
 
   const handleDeleteFromFilmstrip = (id) => {
     revokeThumbCache(id)

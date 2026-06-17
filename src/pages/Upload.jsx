@@ -117,14 +117,14 @@ export default function Upload() {
     if (!sessionStartedRef.current) {
       sessionStartedRef.current = true
       sessionIdRef.current = crypto.randomUUID().replace(/-/g, '')
-      await fetch('/workspace/clear', { method: 'DELETE' }).catch(() => {})
+      await fetch('https://lumiere-backend-xscg.onrender.com/workspace/clear', { method: 'DELETE' }).catch(() => {})
     }
 
     // Upload to backend for metadata
     const form = new FormData()
     acceptedFiles.forEach(f => form.append('files', f))
     try {
-      const res = await fetch('/upload', { method: 'POST', body: form })
+      const res = await fetch('https://lumiere-backend-xscg.onrender.com/upload', { method: 'POST', body: form })
       if (!res.ok) throw new Error(`Upload failed: ${res.statusText}`)
       const data = await res.json()
       if (data.errors?.length) {
@@ -170,7 +170,7 @@ export default function Upload() {
       const photo = prev.find(p => p.id === id)
       if (photo?.previewUrl) URL.revokeObjectURL(photo.previewUrl)
       if (photo && !photo._tempId) {
-        fetch(`/photos/${photo.id}`, { method: 'DELETE' }).catch(() => {})
+        fetch(`https://lumiere-backend-xscg.onrender.com/photos/${photo.id}`, { method: 'DELETE' }).catch(() => {})
       }
       return prev.filter(p => p.id !== id)
     })
@@ -530,7 +530,7 @@ function PhotoCard({ photo, selected, onSelect, onDelete }) {
     setDropdownOpen(false)
     // Sync to backend if photo has a real ID
     if (photo.id && !photo._tempId) {
-      fetch(`/photos/${photo.id}/scene`, {
+      fetch(`https://lumiere-backend-xscg.onrender.com/photos/${photo.id}/scene`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ lighting: value }),

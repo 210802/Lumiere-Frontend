@@ -15,12 +15,12 @@ export default function App() {
         <Sidebar />
         <main style={{ height: '100%', overflow: 'hidden' }}>
           <Routes>
-            <Route path="/" element={<Navigate to="/upload" replace />} />
-            <Route path="/upload"  element={<Upload />} />
-            <Route path="/train"   element={<Train />} />
-            <Route path="/edit"    element={<Edit />} />
-            <Route path="/export"  element={<Export />} />
-            <Route path="/library" element={<StyleLibraryPage />} />
+            <Route path="/" element={<Navigate to="https://lumiere-backend-xscg.onrender.com/upload" replace />} />
+            <Route path="https://lumiere-backend-xscg.onrender.com/upload"  element={<Upload />} />
+            <Route path="https://lumiere-backend-xscg.onrender.com/train"   element={<Train />} />
+            <Route path="https://lumiere-backend-xscg.onrender.com/edit"    element={<Edit />} />
+            <Route path="https://lumiere-backend-xscg.onrender.com/export"  element={<Export />} />
+            <Route path="https://lumiere-backend-xscg.onrender.com/library" element={<StyleLibraryPage />} />
           </Routes>
         </main>
       </div>
